@@ -1,0 +1,13 @@
+## HOW TO
+#
+# Adicionando o alias "letsgo" para iniciar seu trabalho em qualquer lugar do terminal.
+# 
+# INSTRUÇÕES:
+#
+# 1 - Copie e cole esseas linhas no final do seu arquivo ~/.bashrc
+# 2 - Não esqueça de trocar [CAMINHO DOS ARQUIVOS] pelo seu local do HTDOCS (o meu é: /opt/lampp/htdocs/public_html)
+# 3 - Não esqueça de trocar [SEU NOME] pelo nome que o Terminal irá te chamar.
+#
+# Obs: Crie/Edite o .bashrc do seu usuário e não o da pasta etc/
+
+alias letsgo='google-chrome http://localhost clear && cd && notify-send "Bem-vindo, [SEU NOME]!" "Seus repositórios estão sendo listados e o localhost iniciado." && echo Esses são os diretórios disponíveis: && ls -1 -d */ && echo && echo Esses são os repositórios GIT disponíveis: && ls -1 -d */.git && echo'
