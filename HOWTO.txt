@@ -12,17 +12,19 @@
 #
 ################
 
-# ALIAS DE LET'S GO
+## VARIÁVEIS
 imguser=/var/lib/AccountsService/icons/$USER
-localpath=/opt/lampp/htdocs/
-
-alias letsgo='clear && cd $localpath && notify-send -t 3000 -i $imguser "Bem-vindo, $USER!" "Seus repositórios estão sendo listados e o localhost iniciado." && echo Esses são os diretórios disponíveis: && repo-list && echo && echo Esses são os repositórios GIT disponíveis: && repo-git-list && echo'
+localpath=/opt/lampp/htdocs/public_html
 
 # ALIAS PARA LISTAR REPOSITÓRIOS
-alias repo-list="ls -1 -d */"
+alias repo-list="cd $localpath && echo Repositórios disponíveis: && echo && ls -1 -d */"
 
 # ALIAS PARA LISTAR REPOSITÓRIOS GIT
-alias repo-git-list="ls -1 -d */.git"
+alias repo-git-list="cd $localpath && echo Repositórios GIT disponíveis: && echo && ls -1 -d */.git"
+
+# ALIAS DE LET'S GO
+
+alias letsgo='clear && cd $localpath && notify-send -t 3000 -i $imguser "Bem-vindo, $USER!" "Seus repositórios estão sendo listados e o localhost iniciado." && echo Esses são os diretórios disponíveis: && repo-list && echo && echo Esses são os repositórios GIT disponíveis: && repo-git-list && echo'
 
 ################
 #
