@@ -1,13 +1,35 @@
-## HOW TO
+## HOW TO INSTALL
 #
 # Adicionando o alias "letsgo" para iniciar seu trabalho em qualquer lugar do terminal.
 #
 # INSTRUÇÕES:
 #
-# 1 - Copie e cole esseas linhas no final do seu arquivo ~/.bashrc
-# 2 - Não esqueça de trocar [CAMINHO DOS ARQUIVOS] pelo seu local do HTDOCS (o meu é: /opt/lampp/htdocs/public_html)
+# 1 - Copie e cole esseas linhas no arquivo .bash_profile
+# 2 - Não esqueça de trocar "localpath" pelo caminho do seu HTDOCS (o meu é: /opt/lampp/htdocs/public_html)
 #
-# Obs: Crie/Edite o .bashrc do seu usuário e não o da pasta etc/
+# Obs: Crie/Edite o .bash_profile na sua pasta de usuário. Você pode fazer isso com o comando: 
+# ~$ nano .bash_profile
+#
+################
 
+# ALIAS DE LET'S GO
 imguser=/var/lib/AccountsService/icons/$USER
-alias letsgo='google-chrome http://localhost clear && cd [CAMINHO DOS ARQUIVOS] && notify-send -t 2000 -i $imguser "Bem-vindo, $USER!" "Seus repositórios estão sendo listados e o localhost iniciado." && echo Esses são os diretórios disponíveis: && ls -1 -d */ && echo && echo Esses são os repositórios GIT disponíveis: && ls -1 -d */.git && echo'
+localpath=/opt/lampp/htdocs/
+
+alias letsgo='clear && cd $localpath && notify-send -t 3000 -i $imguser "Bem-vindo, $USER!" "Seus repositórios estão sendo listados e o localhost iniciado." && echo Esses são os diretórios disponíveis: && repo-list && echo && echo Esses são os repositórios GIT disponíveis: && repo-git-list && echo'
+
+# ALIAS PARA LISTAR REPOSITÓRIOS
+alias repo-list="ls -1 -d */"
+
+# ALIAS PARA LISTAR REPOSITÓRIOS GIT
+alias repo-git-list="ls -1 -d */.git"
+
+################
+#
+# Após salvo o .bash_profile, reinicie o linux ou execute o comando: 
+# ~$ source .bash_profile
+# e reinicie o terminal. Caso isso não resolva, verifique se o arquivo tem permissão de execução.
+#
+# Obs2: Pode acrescentar "google-chrome http://localhost &&" antes do "clear" para abrir o Chrome no Localhost. Não o fiz pois estava dando problema aqui no meu computador.
+
+# Aprenda mais aqui: http://www.di.ubi.pt/~operativos/praticos/html/3-bash.html
